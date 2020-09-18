@@ -1,0 +1,58 @@
+@import url(//db.onlinewebfonts.com/c/69baa409a08898b1529830a984c0f25c?family=GraphiqueProNextCo);
+@import url(//db.onlinewebfonts.com/c/ab83b275830b2d585ea027c47e3b237a?family=GraphiqueW01-Regular);
+
+@font-face {
+  font-family: "GraphiqueProNextCo";
+  src: url("//db.onlinewebfonts.com/t/69baa409a08898b1529830a984c0f25c.eot");
+  src: url("//db.onlinewebfonts.com/t/69baa409a08898b1529830a984c0f25c.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/69baa409a08898b1529830a984c0f25c.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/69baa409a08898b1529830a984c0f25c.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/69baa409a08898b1529830a984c0f25c.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/69baa409a08898b1529830a984c0f25c.svg#GraphiqueProNextCo")
+      format("svg");
+  font-family: "GraphiqueW01-Regular";
+  src: url("//db.onlinewebfonts.com/t/ab83b275830b2d585ea027c47e3b237a.eot");
+  src: url("//db.onlinewebfonts.com/t/ab83b275830b2d585ea027c47e3b237a.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/ab83b275830b2d585ea027c47e3b237a.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/ab83b275830b2d585ea027c47e3b237a.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/ab83b275830b2d585ea027c47e3b237a.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/ab83b275830b2d585ea027c47e3b237a.svg#GraphiqueW01-Regular")
+      format("svg");
+}
+
+.moderator {
+  /* font-family: "GraphiqueW01-Regular"; */
+  font-family: "Bebas Neue", cursive;
+  font-size: 5rem;
+}
+
+.showLogo {
+  width: 380px;
+}
+
+.userPostForm {
+  margin: 50px auto;
+  border: 3px solid #ad020a;
+}
+
+.postLabel {
+  font-family: "GraphiqueW01-Regular";
+  font-size: 2.5rem;
+  color: black;
+}
+
+.postBtn {
+  background-color: #e50914;
+}
+
+.cancelBtn {
+  background-color: black;
+}

@@ -1,0 +1,27 @@
+.footerLogo {
+  width: 25%;
+  height: 60px;
+  opacity: 70%;
+  transition-duration: 1s;
+}
+
+@media (max-width: 1199px) {
+  .footerLogo {
+    width: 25%;
+  }
+}
+@media (max-width: 991px) {
+  .footerLogo {
+    width: 35%;
+  }
+}
+@media (max-width: 767px) {
+  .footerLogo {
+    width: 45%;
+  }
+}
+@media (max-width: 560px) {
+  .footerLogo {
+    width: 50%;
+  }
+}

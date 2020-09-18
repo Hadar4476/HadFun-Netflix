@@ -1,0 +1,24 @@
+nav {
+  background: #e50914;
+  border-bottom: 3px solid white;
+}
+.logo {
+  opacity: 90%;
+  transition-duration: 0.5s;
+}
+.logo:hover {
+  opacity: 100%;
+}
+.dropdown-toggle {
+  min-width: 160px;
+  background-color: black;
+}
+.dropdown-item {
+  color: black;
+}
+.dropdown-menu {
+  background-color: white;
+}
+.userAvatar {
+  width: 50px;
+}

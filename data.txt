@@ -1,0 +1,62 @@
+tv shows:
+	* Family Guy
+	* Rick and Morty
+	* Bojack Horseman
+	* South Park
+	* Brooklyn 99
+	* Friends
+	* How I Met Your Mother
+	* The Big Bang
+	* Big Mouth
+	* Lucifer
+	* Breaking Bad
+	* Better Call Saul
+	* Stranger Things
+	* Fauda
+	* Prison Break
+	* Narcos
+	* Peaky Blinders
+	* Money Heist
+	* The Witcher
+	* Sherlock
+	* Black Mirror
+	* Vikings
+	* Fargo
+	* Sons of Anarchy
+	* Gotham
+	* How to Get Away with Murder
+	* Limitless
+	* Altered Carbon
+	* Teen Wolf
+	* The Umbrella Academy
+	* Daredevil
+	* Titans
+	* Dark
+	* Our Planet
+	* Disenchantment 
+	* Paradise PD
+	* The Crown
+	* Inception
+	* The Shining
+	* Venom
+	* Jumanji
+	* Spiderman: Into The Spider-Verse
+	* Ride Along
+	* Rush Hour
+	* Matrix
+	* A Million Ways To Die In The West
+	* We're The Millers
+	* Murder Mystery
+	* Zombieland
+	* World War Z
+
+// each series/movie will hold the following:
+
+	- id
+	- title
+	- image
+
+
+
+
+
