@@ -103,7 +103,7 @@ function post_date($date)
                             </div>
                             <p id="post_content" class="form-control userPost"><?= str_replace("\n", '<br>', htmlspecialchars($show_movie_posts[$i]['post'])) ?></p>
                             <?php if ($user_id == $show_movie_posts[$i]['user_id']) : ?>
-                                <textarea id="user_edit_post" class="d-none" name="user_edit_post" rows="10" placeholder="Type your content here..."></textarea>
+                                <textarea id="user_edit_post" class="d-none" name="user_edit_post" rows="10" placeholder="Type your content here..."><?= str_replace("\n", '<br>', htmlspecialchars($show_movie_posts[$i]['post'])) ?></textarea>
                             <?php endif; ?>
                             <div class="d-flex justify-content-end">
                                 <p class="pr-1"><?= post_date($show_movie_posts[$i]['date']) ?></p>
