@@ -31,7 +31,7 @@
 <body>
     <header id="page_header">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a href="http://hadfunandnetflix.com/blog.php">
+            <a href="/hadfun&netflix-project//blog.php">
                 <img src="data:image/png;base64,<?php echo base64_encode(file_get_contents("images/logo.png")); ?>" alt="logo" class="logo img-fluid">
             </a>
             <?php if (isset($_SESSION['user_id'])) : ?>
