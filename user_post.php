@@ -72,7 +72,7 @@ if (isset($_POST['submit'])) {
                         <span class="error"><b id='user_post_error'><?= $errors['user_post']; ?></b></span>
                     </div>
                     <div class="w-100 d-flex justify-content-between">
-                        <a href="http://hadfunandnetflix.com/blog.php" class="cancelBtn btn w-50 text-white mr-1">Cancel</a>
+                        <a href="/hadfun&netflix-project/blog.php" class="cancelBtn btn w-50 text-white mr-1">Cancel</a>
                         <button type="submit" name="submit" class="postBtn w-50 btn text-white ml-1">Post</button>
                     </div>
                 </form>

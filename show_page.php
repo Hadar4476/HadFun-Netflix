@@ -74,40 +74,40 @@ function post_date($date)
             <div class="col">
                 <img src="<?= $netflix_show['logo'] ?>" alt="<?= $netflix_show['title'] ?>">
                 <br>
-                <a class="userPostAnchor btn text-white mt-4" href="http://hadfunandnetflix.com/user_post.php?show=<?= $netflix_show['id'] ?>"><i class="fas fa-plus pr-3"></i>Share your opinion</a>
-                <?php if ($data && mysqli_num_rows($data) > 0): ?>
-                <?php while($post = mysqli_fetch_assoc($data)): ?>
-                <div class="d-flex">
-                        <img class="userIcon bg-white p-2" src="<?= get_user_field($post['user_id'], $link, 'avatar') ?>" alt="<?= get_user_field($post['user_id'], $link, 'username') ?>">
-                        <div class="postContainer bg-white w-50 rounded text-left">
-                            <div class="d-flex">
-                                <h2 class="username w-50"><b><?= get_user_field($post['user_id'], $link, 'username') ?></b></h2>
+                <a class="userPostAnchor btn text-white mt-4" href="/hadfun&netflix-project/user_post.php?show=<?= $netflix_show['id'] ?>"><i class="fas fa-plus pr-3"></i>Share your opinion</a>
+                <?php if ($data && mysqli_num_rows($data) > 0) : ?>
+                    <?php while ($post = mysqli_fetch_assoc($data)) : ?>
+                        <div class="d-flex">
+                            <img class="userIcon bg-white p-2" src="<?= get_user_field($post['user_id'], $link, 'avatar') ?>" alt="<?= get_user_field($post['user_id'], $link, 'username') ?>">
+                            <div class="postContainer bg-white w-50 rounded text-left">
+                                <div class="d-flex">
+                                    <h2 class="username w-50"><b><?= get_user_field($post['user_id'], $link, 'username') ?></b></h2>
+                                    <?php if ($user_id == $post['user_id']) : ?>
+                                        <div class="ml-auto">
+                                            <p id="post_id" class="d-none"><?= $post['id'] ?></p>
+                                            <a id="save_edit_anchor" class="d-none" onclick="save_edit(event)">
+                                                <i class="far fa-check-square fa-lg"></i>
+                                            </a>
+                                            <a id="edit_anchor" class="text-dark" onclick="start_edit(event)">
+                                                <i class="far fa-edit fa-lg"></i>
+                                            </a>
+                                            <a id="delete_anchor" class="text-dark" onclick="get_post_id(event)">
+                                                <i class="fas fa-times fa-lg"></i>
+                                            </a>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                                <p id="post_content" class="userPost"><?= str_replace("\n", '<br>', htmlspecialchars($post['post'])) ?></p>
                                 <?php if ($user_id == $post['user_id']) : ?>
-                                    <div class="ml-auto">
-                                        <p id="post_id" class="d-none"><?= $post['id'] ?></p>
-                                        <a id="save_edit_anchor" class="d-none" onclick="save_edit(event)">
-                                            <i class="far fa-check-square fa-lg"></i>
-                                        </a>
-                                        <a id="edit_anchor" class="text-dark" onclick="start_edit(event)">
-                                            <i class="far fa-edit fa-lg"></i>
-                                        </a>
-                                        <a id="delete_anchor" class="text-dark" onclick="get_post_id(event)">
-                                            <i class="fas fa-times fa-lg"></i>
-                                        </a>
-                                    </div>
+                                    <textarea id="user_edit_post" class="d-none" name="user_edit_post" rows="10" placeholder="Type your content here..."><?= str_replace("\n", '<br>', htmlspecialchars($post['post'])) ?></textarea>
                                 <?php endif; ?>
-                            </div>
-                            <p id="post_content" class="userPost"><?= str_replace("\n", '<br>', htmlspecialchars($post['post'])) ?></p>
-                            <?php if ($user_id == $post['user_id']) : ?>
-                                <textarea id="user_edit_post" class="d-none" name="user_edit_post" rows="10" placeholder="Type your content here..."><?= str_replace("\n", '<br>', htmlspecialchars($post['post'])) ?></textarea>
-                            <?php endif; ?>
-                            <div class="d-flex justify-content-end">
-                                <p class="pr-1"><?= post_date($post['date']) ?></p>
+                                <div class="d-flex justify-content-end">
+                                    <p class="pr-1"><?= post_date($post['date']) ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endwhile;?>
-                <?php endif;?>
+                    <?php endwhile; ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>

@@ -23,5 +23,5 @@ if ($post_id && is_numeric($post_id)) {
 
     $sql = "UPDATE posts SET post = '$post_content' WHERE id = $post_id AND user_id = $user_id";
     $result = mysqli_query($link, $sql);
-    header("location: http://hadfunandnetflix.com/show_page.php?show=$show_id");
+    header("location: show_page.php?show=$show_id");
 }

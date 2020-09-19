@@ -31,20 +31,20 @@ function get_show_movie_name($id, &$link)
 <?php include 'templates/header.php'; ?>
 
 <main>
-    <?php if($result && mysqli_num_rows($result) > 0): ?>
+    <?php if ($result && mysqli_num_rows($result) > 0) : ?>
         <div class="container m-auto w-50">
             <div class="row">
                 <div class="col">
                     <h1 class="myPosts text-white">My Posts:</h1>
-                    <?php while($user_post = mysqli_fetch_assoc($result)):?>
-                                  <div class="bg-white w-75 rounded mt-4 p-2">
+                    <?php while ($user_post = mysqli_fetch_assoc($result)) : ?>
+                        <div class="bg-white w-75 rounded mt-4 p-2">
                             <h2 class="form-control w-50"><b><?= get_show_movie_name($user_post['show_movie_id'], $link) ?></b></h2>
                             <p class="form-control"><?= htmlspecialchars($user_post['post']) ?></p>
                             <div class="d-flex justify-content-end">
                                 <p class="pr-1"><?= $user_post['date'] ?></p>
                             </div>
                         </div>
-                    <?php endwhile;?>
+                    <?php endwhile; ?>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@ function get_show_movie_name($id, &$link)
             <div class="row">
                 <div class="col">
                     <h1 class="myPosts text-white">Seems like your post list is empty</h1>
-                    <a href="http://hadfunandnetflix.com/blog.php" class="browseBtn btn text-white">Browse Netflix Shows & Movies</a>
+                    <a href="/hadfun&netflix-project/blog.php" class="browseBtn btn text-white">Browse Netflix Shows & Movies</a>
                 </div>
             </div>
         </div>
