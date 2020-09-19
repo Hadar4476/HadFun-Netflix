@@ -10,7 +10,7 @@ if (empty($show) || !is_numeric($show) || strlen($show) > 2 || $show > 51) {
     exit;
 }
 
-require_once '../app/helpers.php';
+require_once 'app/helpers.php';
 
 $errors = [
     'user_post' => ''
@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<?php include 'header.php'; ?>
+<?php include 'templates/header.php'; ?>
 <main>
     <div class="container text-center mt-1">
         <div class="row">
@@ -72,7 +72,7 @@ if (isset($_POST['submit'])) {
                         <span class="error"><b id='user_post_error'><?= $errors['user_post']; ?></b></span>
                     </div>
                     <div class="w-100 d-flex justify-content-between">
-                        <a href="/hadfun&netflix-project/templates/blog.php" class="cancelBtn btn w-50 text-white mr-1">Cancel</a>
+                        <a href="http://hadfunandnetflix.com/blog.php" class="cancelBtn btn w-50 text-white mr-1">Cancel</a>
                         <button type="submit" name="submit" class="postBtn w-50 btn text-white ml-1">Post</button>
                     </div>
                 </form>
@@ -80,4 +80,4 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
 </main>
-<?php include 'footer.php'; ?>
+<?php include 'templates/footer.php'; ?>

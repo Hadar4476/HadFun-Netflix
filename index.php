@@ -9,7 +9,7 @@ if (isset($_SESSION['user_id'])) {
     exit;
 }
 
-require_once '../app/helpers.php';
+require_once 'app/helpers.php';
 include_once 'users_icons.php';
 
 
@@ -130,7 +130,7 @@ if (isset($_POST['submit']) && isset($_POST['signup_username']) || isset($_POST[
 }
 ?>
 
-<?php include 'header.php' ?>
+<?php include 'templates/header.php' ?>
 <script>
     if (window.history.replaceState) {
         window.history.replaceState(null, null, window.location.href);
@@ -199,4 +199,4 @@ if (isset($_POST['submit']) && isset($_POST['signup_username']) || isset($_POST[
         </div>
     </div>
 </main>
-<?php include 'footer.php' ?>
+<?php include 'templates/footer.php' ?>

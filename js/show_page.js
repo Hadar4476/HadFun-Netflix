@@ -32,7 +32,7 @@ function save_edit() {
         });
         return;
       }
-      window.location = `/hadfun&netflix-project/templates/edit_post.php?post_id=${post_id.innerHTML}&post_content=${user_edit_post.value}`;
+      window.location = `http://hadfunandnetflix.com/edit_post.php?post_id=${post_id.innerHTML}&post_content=${user_edit_post.value}`;
     } else {
       user_edit_post.className = "d-none";
       edit_anchor.className = "text-dark";
@@ -57,7 +57,7 @@ function startSwal(post_id) {
     confirmButtonText: "Delete",
   }).then((result) => {
     if (result.isConfirmed) {
-      window.location = `/hadfun&netflix-project/templates/delete_post.php?post=${post_id}`;
+      window.location = `http://hadfunandnetflix.com/delete_post.php?post=${post_id}`;
     }
   });
 }

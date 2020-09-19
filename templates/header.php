@@ -12,17 +12,17 @@
     <link href="//db.onlinewebfonts.com/c/ab83b275830b2d585ea027c47e3b237a?family=GraphiqueW01-Regular" rel="stylesheet" type="text/css" />
     <!-- font-family: 'Bebas Neue', cursive; --->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
     <style>
-        <?php include '../css/index.css';
-        include '../css/header.css';
-        include '../css/main.css';
-        include '../css/form.css';
-        include '../css/blog.css';
-        include '../css/user_post.css';
-        include '../css/user_profile.css';
-        include '../css/show_page.css';
-        include '../css/footer.css';
+        <?php include 'css/index.css';
+        include 'css/header.css';
+        include 'css/main.css';
+        include 'css/form.css';
+        include 'css/blog.css';
+        include 'css/user_post.css';
+        include 'css/user_profile.css';
+        include 'css/show_page.css';
+        include 'css/footer.css';
         ?>
     </style>
     <title>Hadfun & Netflix</title>
@@ -31,8 +31,8 @@
 <body>
     <header id="page_header">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a href="/hadfun&netflix-project/templates/blog.php">
-                <img src="data:image/png;base64,<?php echo base64_encode(file_get_contents("../images/logo.png")); ?>" alt="logo" class="logo img-fluid">
+            <a href="http://hadfunandnetflix.com/blog.php">
+                <img src="data:image/png;base64,<?php echo base64_encode(file_get_contents("images/logo.png")); ?>" alt="logo" class="logo img-fluid">
             </a>
             <?php if (isset($_SESSION['user_id'])) : ?>
                 <div class="ml-auto d-flex">
@@ -43,7 +43,7 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="user_profile.php">My Profile</a>
-                            <a class="dropdown-item" href="/hadfun&netflix-project/templates/logout.php">Logout</a>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
                         </div>
                     </div>
                 </div>

@@ -6,19 +6,15 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-require_once '../app/helpers.php';
+require_once 'app/helpers.php';
 
 
-$user_posts  = [];
 $uid = $_SESSION['user_id'];
 $show_movie = '';
 
 $link = mysqli_connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB);
 $sql = "SELECT * FROM posts WHERE user_id = $uid ORDER BY date DESC";
 $result = mysqli_query($link, $sql);
-if ($result && mysqli_num_rows($result) > 0) {
-    $user_posts = $result->fetch_all(MYSQLI_ASSOC);
-}
 
 function get_show_movie_name($id, &$link)
 {
@@ -30,27 +26,25 @@ function get_show_movie_name($id, &$link)
     }
 }
 
-$user_posts_length = count($user_posts);
-
 ?>
 
-<?php include 'header.php'; ?>
+<?php include 'templates/header.php'; ?>
 
 <main>
-    <?php if ($user_posts_length > 0) : ?>
+    <?php if($result && mysqli_num_rows($result) > 0): ?>
         <div class="container m-auto w-50">
             <div class="row">
                 <div class="col">
                     <h1 class="myPosts text-white">My Posts:</h1>
-                    <?php for ($i = 0; $i < $user_posts_length; $i++) : ?>
-                        <div class="bg-white w-75 rounded mt-4 p-2">
-                            <h2 class="form-control w-50"><b><?= get_show_movie_name($user_posts[$i]['show_movie_id'], $link) ?></b></h2>
-                            <p class="form-control"><?= htmlspecialchars($user_posts[$i]['post']) ?></p>
+                    <?php while($user_post = mysqli_fetch_assoc($result)):?>
+                                  <div class="bg-white w-75 rounded mt-4 p-2">
+                            <h2 class="form-control w-50"><b><?= get_show_movie_name($user_post['show_movie_id'], $link) ?></b></h2>
+                            <p class="form-control"><?= htmlspecialchars($user_post['post']) ?></p>
                             <div class="d-flex justify-content-end">
-                                <p class="pr-1"><?= $user_posts[$i]['date'] ?></p>
+                                <p class="pr-1"><?= $user_post['date'] ?></p>
                             </div>
                         </div>
-                    <?php endfor; ?>
+                    <?php endwhile;?>
                 </div>
             </div>
         </div>
@@ -59,7 +53,7 @@ $user_posts_length = count($user_posts);
             <div class="row">
                 <div class="col">
                     <h1 class="myPosts text-white">Seems like your post list is empty</h1>
-                    <a href="/hadfun&netflix-project/templates/blog.php" class="browseBtn btn text-white">Browse Netflix Shows & Movies</a>
+                    <a href="http://hadfunandnetflix.com/blog.php" class="browseBtn btn text-white">Browse Netflix Shows & Movies</a>
                 </div>
             </div>
         </div>
@@ -67,4 +61,4 @@ $user_posts_length = count($user_posts);
 
 </main>
 
-<?php include 'footer.php'; ?>
+<?php include 'templates/footer.php'; ?>

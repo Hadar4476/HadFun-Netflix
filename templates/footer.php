@@ -2,17 +2,17 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col d-flex p-4 justify-content-center">
-                <img onclick="document.location='#page_header'" id="footer_logo" onmouseover="highlightFooter()" onmouseout="muteFooter()" src="data:image/png;base64,<?php echo base64_encode(file_get_contents("../images/footer-logo.png")); ?>" alt="footer-logo" class="footerLogo img-fluid">
-                <img onclick="document.location='#page_header'" id="netflix_logo" src="data:image/png;base64,<?php echo base64_encode(file_get_contents("../images/netflix-logo.png")); ?>" onmouseover="highlightFooter()" onmouseout="muteFooter()" alt="netflix-logo" class="footerLogo img-fluid ml-4" />
+                <img onclick="document.location='#page_header'" id="footer_logo" onmouseover="highlightFooter()" onmouseout="muteFooter()" src="data:image/png;base64,<?php echo base64_encode(file_get_contents("images/footer-logo.png")); ?>" alt="footer-logo" class="footerLogo img-fluid">
+                <img onclick="document.location='#page_header'" id="netflix_logo" src="data:image/png;base64,<?php echo base64_encode(file_get_contents("images/netflix-logo.png")); ?>" onmouseover="highlightFooter()" onmouseout="muteFooter()" alt="netflix-logo" class="footerLogo img-fluid ml-4" />
             </div>
         </div>
     </div>
 </footer>
 <script>
     <?php
-    include '../js/index.js';
-    include '../js/form.js';
-    include '../js/show_page.js';
+    include 'js/index.js';
+    include 'js/form.js';
+    include 'js/show_page.js';
     ?>
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
