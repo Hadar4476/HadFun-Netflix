@@ -97,7 +97,7 @@ function post_date($date)
                                         </div>
                                     <?php endif; ?>
                                 </div>
-                                <p id="post_content" class="userPost"><?= str_replace("\n", '<br>', htmlspecialchars($post['post'])) ?></p>
+                                <p id="post_content" class="userPost border border-dark rounded p-2 m-1"><?= str_replace("\n", "<br>", htmlspecialchars($post['post'])) ?></p>
                                 <?php if ($user_id == $post['user_id']) : ?>
                                     <textarea id="user_edit_post" class="d-none" name="user_edit_post" rows="10" placeholder="Type your content here..."><?= str_replace("\n", '<br>', htmlspecialchars($post['post'])) ?></textarea>
                                 <?php endif; ?>
