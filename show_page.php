@@ -44,26 +44,24 @@ function get_user_field($uid, &$link, $field)
 
 function post_date($date)
 {
-    $minutes = '';
-    $hours  = '';
-    $now = date('Y-m-d H:i:s');
-    $diff = strtotime($now) - strtotime($date);
-    $days_diff = $diff / (60 * 60 * 24);
-    if (abs($days_diff) <= 24) {
-        if (abs($days_diff) <= 1) {
-            $hours .= $diff / (60 * 60);
-            if ($hours < 1) {
-                $minutes .= $diff / (60);
-                if ($minutes < 1) return 'a few seconds ago';
-                if ($minutes > 1 && $minutes < 2) return 'a minute ago';
-                return (int) $minutes  . ' minutes ago';
-            }
-            if ($hours > 1 && $hours < 2) return 'an hour ago';
-            return (int) $hours . ' hours ago';
-        }
-        return (int) $days_diff . ' days ago';
-    }
-    if (abs($days_diff) > 24 && abs($days_diff) < 48) return 'Yesterday';
+    $then = new DateTime($date);
+    $now = new DateTime(date('Y-m-d H:i:s', time()));
+    $diff = $then->diff($now);
+    $time = array('years' => $diff->y, 'months' => $diff->m, 'days' => $diff->d, 'hours' => $diff->h, 'minutes' => $diff->i, 'seconds' => $diff->s);
+    if ($time['years'] && $time['years'] == 1) return ' a year ago';
+    if ($time['years'] && $time['years'] > 1) return $time['years'] . ' years ago';
+    if ($time['months'] && $time['months'] == 1) return $time['months'] . ' month ago';
+    if ($time['months'] && $time['months'] > 1) return $time['months'] . ' months ago';
+    if ($time['days'] && $time['days'] == 1) return 'Yesterday';
+    if ($time['days'] && $time['days'] > 1 && $time['days'] < 7) return $time['days'] . ' days ago';
+    if ($time['days'] && $time['days'] >= 7 && $time['days'] < 14) return '1 week ago';
+    if ($time['days'] && $time['days'] >= 14 && $time['days'] < 21) return '2 week ago';
+    if ($time['days'] && $time['days'] >= 21 && $time['days'] < 28) return '3 week ago';
+    if ($time['hours'] && $time['hours'] == 1) return ' an hour ago';
+    if ($time['hours'] && $time['hours'] > 1) return $time['hours'] . ' hours ago';
+    if ($time['minutes'] && $time['minutes'] == 1) return 'A minute ago';
+    if ($time['minutes'] && $time['minutes'] > 1) return $time['minutes'] . ' minutes ago';
+    if ($time['seconds'] >= 0) return 'a few seconds ago';
 }
 ?>
 
